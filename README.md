@@ -1,12 +1,31 @@
-# React + Vite
+# React Vite URL Shortener - Dockerized with Jenkins CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This project is a **React Vite-based URL Shortener**.  
+It has been **containerized with Docker** and deployed via **Jenkins CI/CD**.
 
-Currently, two official plugins are available:
+- React frontend built using **Vite**.
+- Docker used to create an **nginx-based container** serving the app.
+- Jenkins automates **CI/CD pipeline**:
+  1. Checkout code from GitHub
+  2. Build Docker image
+  3. Stop old container
+  4. Run new container
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
+- URL shortening functionality
+- Dockerized React app
+- Automated CI/CD with Jenkins
+- Auto-build and deploy on code push
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+Docker: Packages the React Vite app along with Nginx into a lightweight container, ensuring it runs the same way on any machine without local setup issues.
+
+Jenkins: Automates the CI/CD pipeline by pulling the latest code from GitHub, building the Docker image, stopping any old container, and running the new container, so deployment happens automatically on each code change.
+
+---
+
+
