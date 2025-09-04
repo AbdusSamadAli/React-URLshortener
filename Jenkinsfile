@@ -11,9 +11,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                // Checkout code from GitHub using HTTPS credential
                 git branch: 'main',
-                    url: 'https://github.com/username/your-react-repo.git',
+                    url: 'https://github.com/AbdusSamadAli/React-URLshortener.git',
                     credentialsId: 'github-credential'
             }
         }
@@ -47,7 +46,6 @@ pipeline {
                 }
             }
         }
-
     }
 
     post {
