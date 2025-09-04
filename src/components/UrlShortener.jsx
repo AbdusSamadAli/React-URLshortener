@@ -4,7 +4,6 @@ export default function UrlShortener() {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrls, setShortUrls] = useState([]);
 
-  // Load saved URLs from localStorage
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("shortUrls")) || [];
     setShortUrls(saved);
@@ -12,14 +11,10 @@ export default function UrlShortener() {
 
   const handleShorten = () => {
     if (!longUrl) return;
-
-    // Create a simple short code (first 6 chars of base64)
     const shortCode = btoa(longUrl).slice(0, 6);
     const shortUrl = `${window.location.origin}/${shortCode}`;
-
     const newEntry = { longUrl, shortUrl };
     const updated = [...shortUrls, newEntry];
-
     setShortUrls(updated);
     localStorage.setItem("shortUrls", JSON.stringify(updated));
     setLongUrl("");
@@ -27,7 +22,7 @@ export default function UrlShortener() {
 
   return (
     <div style={{ padding: "2rem", maxWidth: "500px", margin: "auto" }}>
-      <h1>URL Shortener</h1>
+      <h1>The URL Shortener</h1>
       <input
         type="text"
         placeholder="Enter URL"
